@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.text.method.ReplacementTransformationMethod;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -81,7 +82,7 @@ public class IBeaconFragment extends Fragment implements SeekBar.OnSeekBarChange
         sbTxPower.setOnSeekBarChangeListener(this);
         pattern = Pattern.compile(UUID_PATTERN);
         //限制只输入大写，自动小写转大写
-//        etUuid.setTransformationMethod(new A2bigA());
+        etUuid.setTransformationMethod(new A2bigA());
         etUuid.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -95,7 +96,7 @@ public class IBeaconFragment extends Fragment implements SeekBar.OnSeekBarChange
 
             @Override
             public void afterTextChanged(Editable s) {
-                String input = s.toString().toUpperCase();
+                String input = s.toString();
                 if (!pattern.matcher(input).matches()) {
                     if (input.length() == 9 && !input.endsWith("-")) {
                         String show = input.substring(0, 8) + "-" + input.substring(8, input.length());
@@ -275,20 +276,20 @@ public class IBeaconFragment extends Fragment implements SeekBar.OnSeekBarChange
         MokoSupport.getInstance().sendOrder(orderTasks.toArray(new OrderTask[]{}));
     }
 
-//    public class A2bigA extends ReplacementTransformationMethod {
-//
-//        @Override
-//        protected char[] getOriginal() {
-//            char[] aa = {'a', 'b', 'c', 'd', 'e', 'f'};
-//            return aa;
-//        }
-//
-//        @Override
-//        protected char[] getReplacement() {
-//            char[] cc = {'A', 'B', 'C', 'D', 'E', 'F'};
-//            return cc;
-//        }
-//    }
+    public class A2bigA extends ReplacementTransformationMethod {
+
+        @Override
+        protected char[] getOriginal() {
+            char[] aa = {'a', 'b', 'c', 'd', 'e', 'f'};
+            return aa;
+        }
+
+        @Override
+        protected char[] getReplacement() {
+            char[] cc = {'A', 'B', 'C', 'D', 'E', 'F'};
+            return cc;
+        }
+    }
 
     @Override
     public void resetParams() {

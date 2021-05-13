@@ -143,7 +143,7 @@ public class DeviceInfoActivity extends BaseActivity implements RadioGroup.OnChe
                     if (isUpgrading) {
                         tvTitle.postDelayed(() -> {
                             dismissDFUProgressDialog();
-                        }, 1000);
+                        }, 2000);
                     } else {
                         AlertMessageDialog dialog = new AlertMessageDialog();
                         dialog.setTitle("Dismiss");
@@ -770,6 +770,7 @@ public class DeviceInfoActivity extends BaseActivity implements RadioGroup.OnChe
 
         @Override
         public void onDfuCompleted(String deviceAddress) {
+            XLog.w("onDfuCompleted...");
             isUpgradeCompleted = true;
         }
 
