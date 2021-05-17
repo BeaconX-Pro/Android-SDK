@@ -35,7 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:text="RSSI@0m"
+            android:text="Measured RSSI"
             android:textColor="@color/grey_999999"
             android:textSize="12sp" />
 

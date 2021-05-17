@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@id/tv_storage_humidity_only"
         android:layout_alignBottom="@id/tv_storage_humidity_only"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="5dp"
         android:layout_toRightOf="@id/tv_storage_humidity_only"
         android:gravity="center"
         android:text="%RH"

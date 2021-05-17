@@ -138,7 +138,7 @@
                 android:id="@+id/adv_tx_power"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="RSSI@0m"
+                android:text="Measured RSSI"
                 android:textColor="@color/grey_666666"
                 android:textSize="15sp"
                 android:textStyle="bold" />
