@@ -477,4 +477,16 @@ public class OrderTaskAssembler {
         task.setTriggerData(triggerType, params, isStart);
         return task;
     }
+
+    public static OrderTask getHWResetEnable() {
+        ParamsTask task = new ParamsTask();
+        task.setData(ParamsKeyEnum.GET_HW_RESET_ENABLE);
+        return task;
+    }
+
+    public static OrderTask setHWResetEnable(int enable) {
+        ParamsTask task = new ParamsTask();
+        task.setHWResetEnable(enable);
+        return task;
+    }
 }

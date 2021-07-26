@@ -225,6 +225,33 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/rl_hw_reset"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="HW Reset"
+            android:textColor="@color/black_333333"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/iv_hw_reset"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/connectable_unchecked" />
+
+        <View
+            style="@style/divider_line"
+            android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
         android:id="@+id/rl_update_firmware"
         android:layout_width="match_parent"
         android:layout_height="50dp">

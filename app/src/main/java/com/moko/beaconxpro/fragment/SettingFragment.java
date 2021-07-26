@@ -44,6 +44,10 @@ public class SettingFragment extends Fragment {
     RelativeLayout rlTh;
     @BindView(R.id.rl_reset_facotry)
     RelativeLayout rlResetFacotry;
+    @BindView(R.id.iv_hw_reset)
+    ImageView ivHwReset;
+    @BindView(R.id.rl_hw_reset)
+    RelativeLayout rlHwReset;
 
     private DeviceInfoActivity activity;
 
@@ -90,7 +94,8 @@ public class SettingFragment extends Fragment {
     }
 
     @OnClick({R.id.rl_password, R.id.rl_update_firmware, R.id.rl_reset_facotry, R.id.iv_connectable,
-            R.id.iv_power, R.id.iv_button_power, R.id.iv_password_verify, R.id.rl_axis, R.id.rl_th})
+            R.id.iv_power, R.id.iv_button_power, R.id.iv_password_verify, R.id.rl_axis, R.id.rl_th,
+            R.id.iv_hw_reset})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.rl_password:
@@ -193,6 +198,10 @@ public class SettingFragment extends Fragment {
                 // 温湿度
                 startActivity(new Intent(getActivity(), THDataActivity.class));
                 break;
+            case R.id.iv_hw_reset:
+                isHWResetEnable = !isHWResetEnable;
+                activity.setHWResetEnable(isHWResetEnable);
+                break;
         }
     }
 
@@ -250,5 +259,13 @@ public class SettingFragment extends Fragment {
                 rlTh.setVisibility(View.VISIBLE);
                 break;
         }
+    }
+
+    private boolean isHWResetEnable;
+
+    public void setHWResetEnable(int enable) {
+        rlHwReset.setVisibility(View.VISIBLE);
+        isHWResetEnable = enable == 1;
+        ivHwReset.setImageResource(enable == 1 ? R.drawable.connectable_checked : R.drawable.connectable_unchecked);
     }
 }

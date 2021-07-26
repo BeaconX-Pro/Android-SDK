@@ -303,6 +303,13 @@ public class DeviceInfoActivity extends BaseActivity implements RadioGroup.OnChe
                                         slotFragment.setTriggerData(value);
                                     }
                                     break;
+                                case GET_HW_RESET_ENABLE:
+                                    if (value.length >= 4) {
+                                        int enable = value[4] & 0xFF;
+                                        settingFragment.setHWResetEnable(enable);
+                                    }
+                                    break;
+
                             }
                         }
                         break;
@@ -434,6 +441,7 @@ public class DeviceInfoActivity extends BaseActivity implements RadioGroup.OnChe
         orderTasks.add(OrderTaskAssembler.getHardwareVersion());
         orderTasks.add(OrderTaskAssembler.getFirmwareVersion());
         orderTasks.add(OrderTaskAssembler.getSoftwareVersion());
+        orderTasks.add(OrderTaskAssembler.getHWResetEnable());
         orderTasks.add(OrderTaskAssembler.getBattery());
         orderTasks.add(OrderTaskAssembler.getLockState());
         MokoSupport.getInstance().sendOrder(orderTasks.toArray(new OrderTask[]{}));
@@ -659,6 +667,14 @@ public class DeviceInfoActivity extends BaseActivity implements RadioGroup.OnChe
         ArrayList<OrderTask> orderTasks = new ArrayList<>();
         orderTasks.add(OrderTaskAssembler.setLockStateDirected(noPassword));
         orderTasks.add(OrderTaskAssembler.getLockState());
+        MokoSupport.getInstance().sendOrder(orderTasks.toArray(new OrderTask[]{}));
+    }
+
+    public void setHWResetEnable(boolean enable) {
+        showSyncingProgressDialog();
+        ArrayList<OrderTask> orderTasks = new ArrayList<>();
+        orderTasks.add(OrderTaskAssembler.setHWResetEnable(enable ? 1 : 0));
+        orderTasks.add(OrderTaskAssembler.getHWResetEnable());
         MokoSupport.getInstance().sendOrder(orderTasks.toArray(new OrderTask[]{}));
     }
 

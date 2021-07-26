@@ -34,6 +34,7 @@ public class ParamsTask extends OrderTask {
             case GET_DEVICE_TIME:
             case SET_TH_EMPTY:
             case GET_TRIGGER_DATA:
+            case GET_HW_RESET_ENABLE:
                 createGetConfigData(key.getParamsKey());
                 break;
         }
@@ -145,5 +146,15 @@ public class ParamsTask extends OrderTask {
                 break;
         }
         data = MokoUtils.hex2bytes(value);
+    }
+
+    public void setHWResetEnable(int enable) {
+        data = new byte[]{
+                (byte) 0xEA,
+                (byte) ParamsKeyEnum.SET_HW_RESET_ENABLE.getParamsKey(),
+                (byte) 0x00,
+                (byte) 0x01,
+                (byte) enable
+        };
     }
 }

@@ -26,6 +26,8 @@ public enum ParamsKeyEnum implements Serializable {
     GET_CONNECTABLE(0x90),
     SET_CONNECTABLE(0x89),
     SET_CLOSE(0x26),
+    GET_HW_RESET_ENABLE(0x44),
+    SET_HW_RESET_ENABLE(0x54),
     ;
 
     private int paramsKey;
