@@ -2,24 +2,12 @@
 <resources>
     <!-- test -->
     <color name="white_ffffff">#ffffff</color>
-    <color name="transparent">#00000000</color>
-    <color name="white_fffefe">#fffefe</color>
     <color name="black_333333">#333333</color>
-    <color name="black_373737">#373737</color>
     <color name="black_012d75">#012d75</color>
-    <color name="grey_999999">#999999</color>
     <color name="grey_666666">#666666</color>
-    <color name="grey_a6a6a6">#a6a6a6</color>
-    <color name="grey_737373">#737373</color>
     <color name="grey_d9d9d9">#d9d9d9</color>
-    <color name="grey_ebebeb">#ebebeb</color>
-    <color name="grey_f2f2f2">#f2f2f2</color>
-    <color name="grey_e0e0e0">#e0e0e0</color>
     <color name="grey_b3b3b3">#b3b3b3</color>
-    <color name="blue_5691fc">#5691fc</color>
     <color name="blue_2f84d0">#2f84d0</color>
-    <color name="blue_0099ff">#0099ff</color>
-    <color name="green_00ff00">#00ff00</color>
 
     <color name="text_black_4d4d4d">#4d4d4d</color>
 

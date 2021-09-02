@@ -27,27 +27,6 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan" />
 
-        <activity
-            android:name="com.moko.beaconxpro.activity.DeviceInfoActivity"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan" />
-        <activity
-            android:name="com.moko.beaconxpro.activity.SlotDataActivity"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan" />
-        <activity
-            android:name="com.moko.beaconxpro.activity.AxisDataActivity"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan" />
-        <activity
-            android:name="com.moko.beaconxpro.activity.THDataActivity"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan" />
-        <activity
-            android:name="com.moko.beaconxpro.activity.ExportDataActivity"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan" />
-
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.moko.beaconxpro.fileprovider"
@@ -57,8 +36,6 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
-
-        <service android:name="com.moko.beaconxpro.service.DfuService" />
 
     </application>
 

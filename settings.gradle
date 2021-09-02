@@ -1,1 +1,1 @@
-include ':app', ':mokosupport'
+include ':app'

@@ -3,7 +3,6 @@
 
     <string name="cancel">Cancel</string>
     <string name="confirm">Confirm</string>
-    <string name="ok">OK</string>
 
     <string name="permission_storage_close_title">Storage permission is not available</string>
     <string name="permission_storage_close_content">Please find it in cellphone setting- permission, and allow BeaconXPro use the Storage permission</string>
@@ -18,81 +17,13 @@
     <string name="permission_location_need_content">After that, BeaconXPro could search and connect with the BeaconXPro</string>
 
     <string name="main_exit_tips">Are you sure you want to quit?</string>
-    <string name="setting_syncing">syncing</string>
 
     <string name="company_name">MOKO TECHNOLOGY LTD.</string>
     <string name="about_title">ABOUT</string>
 
     <string name="company_website">www.mokoblue.com</string>
-    <string name="please_enter_password">Please enter password</string>
-    <string name="device_name_null">The device name cannot be empty!</string>
-    <string name="password_length">Length should be 16 bits</string>
-    <string name="slot_title">SLOT</string>
-    <string name="setting_title">SETTING</string>
-    <string name="device_title">DEVICE</string>
-    <string name="h_t"><![CDATA[T&H]]></string>
-    <string name="humi_temp"><![CDATA[Temperature & Humidity]]></string>
-    <string name="storage_condition">Storage trigger</string>
-    <string name="export_data"><![CDATA[Export T&H Data]]></string>
-    <string name="password_null">Password cannot be empty!</string>
-    <string name="temp_only_tips_1"><![CDATA[*The device stores T&H data when the temperature changed ≥ %s ℃.]]></string>
-    <string name="temp_only_tips_0"><![CDATA[*The device stores all sampled T&H data.]]></string>
-    <string name="humidity_only_tips_1"><![CDATA[*The device stores T&H data when the humidity changed ≥ %s%%RH.]]></string>
-    <string name="humidity_only_tips_0"><![CDATA[*The device stores all sampled T&H data.]]></string>
-    <string name="time_only_tips"><![CDATA[*The device stores T&H data every %d minutes.]]></string>
-    <string name="t_h_tips_0"><![CDATA[*The device stores T&H data when the temperature changed ≥ %s ℃ or humidity changed ≥ %s%%RH.]]></string>
-<!--    <string name="t_h_tips_1"><![CDATA[*The device stores T&H data when the temperature changes arbitrarily or humidity changed ≥ %s%%.]]></string>-->
+    <!--    <string name="t_h_tips_1"><![CDATA[*The device stores T&H data when the temperature changes arbitrarily or humidity changed ≥ %s%%.]]></string>-->
 <!--    <string name="t_h_tips_2"><![CDATA[*The device stores T&H data when the temperature changed ≥ %s ℃ or humidity changes arbitrarily.]]></string>-->
 <!--    <string name="t_h_tips_3"><![CDATA[*The device stores T&H data when the temperature or humidity changes arbitrarily.]]></string>-->
-    <string name="trigger_t_h_tips">*The Beacon will %1$s when the %2$s is %3$s %4$s.</string>
-    <string name="trigger_tapped_tips_1">*The Beacon will always broadcast after press the button %s.</string>
-    <string name="trigger_tapped_tips_2">*The Beacon will %1$s for %2$s after press the button %3$s.</string>
-<!--    <string name="trigger_tapped_tips_3">*The Beacon will always stop advertising after press button %s times.</string>-->
-    <string name="trigger_moved_tips_1">*The Beacon will always %s once a movement occurred.</string>
-    <string name="trigger_moved_tips_2">*The Beacon will %1$s after a static period of %2$s and it %3$s again once a movement occurred.</string>
-    <string name="rssi_filter_tips">* RSSI filtering is the highest priority filtering condition. BLE Name and MAC Address filtering must first meet the RSSI filtering condition.\n* There is an "OR" relationship between the BLE Name filtering and the MAC Address filtering.</string>
-    <string name="th_chart_total">Total Data Points:%d</string>
-    <string name="th_chart_display">Window Display Points:%d</string>
-    <string-array name="slot_type_no_sensor">
-        <item>TLM</item>
-        <item>UID</item>
-        <item>URL</item>
-        <item>iBeacon</item>
-        <item>Device Info</item>
-        <item>NO DATA</item>
-    </string-array>
-    <string-array name="slot_type_axis">
-        <item>TLM</item>
-        <item>UID</item>
-        <item>URL</item>
-        <item>iBeacon</item>
-        <item>Device Info</item>
-        <item>NO DATA</item>
-        <item>Accel</item>
-    </string-array>
-    <string-array name="slot_type_th">
-        <item>TLM</item>
-        <item>UID</item>
-        <item>URL</item>
-        <item>iBeacon</item>
-        <item>Device Info</item>
-        <item>NO DATA</item>
-        <item><![CDATA[T&H]]></item>
-    </string-array>
-    <string-array name="slot_type_all">
-        <item>TLM</item>
-        <item>UID</item>
-        <item>URL</item>
-        <item>iBeacon</item>
-        <item>Device Info</item>
-        <item>NO DATA</item>
-        <item>Accel</item>
-        <item><![CDATA[T&H]]></item>
-    </string-array>
-    <string-array name="storage_condition">
-        <item>Temperature</item>
-        <item>Humidity</item>
-        <item><![CDATA[T&H]]></item>
-        <item>Time</item>
-    </string-array>
+    <!--    <string name="trigger_tapped_tips_3">*The Beacon will always stop advertising after press button %s times.</string>-->
 </resources>

@@ -26,7 +26,7 @@ public class AboutActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about);
+        setContentView(R.layout.activity_about_bxp);
         ButterKnife.bind(this);
         appVersion.setText(String.format("Version:%s", Utils.getVersionInfo(this)));
     }

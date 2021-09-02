@@ -8,8 +8,8 @@ android {
         applicationId "com.moko.beaconxpro"
         minSdkVersion 18
         targetSdkVersion 29
-        versionCode 14
-        versionName "1.1.4"
+        versionCode 15
+        versionName "1.2.0"
     }
 
     buildTypes {
@@ -36,18 +36,33 @@ android {
             }
         }
     }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
 }
 
 dependencies {
+    implementation files('libs/mokoBleLib.jar')
+    implementation(name: 'BXP-NORDIC_1.0.0_202109011754', ext: 'aar')
+    implementation(name: 'BXP-TLA_1.0.0_202109021127', ext: 'aar')
     // Butter Knife
     implementation 'com.jakewharton:butterknife:10.2.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
     implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'com.github.GrenderG:Toasty:1.4.1'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
-    implementation 'com.github.GrenderG:Toasty:1.4.1'
     implementation 'cn.carbswang.android:NumberPickerView:1.1.1'
-    implementation project(path: ':mokosupport')
+    implementation 'com.android.support:cardview-v7:29.0.0'
+    // conmmon
+    implementation 'no.nordicsemi.android.support.v18:scanner:1.4.3'
+    implementation 'com.elvishew:xlog:1.6.1'
+    implementation 'no.nordicsemi.android:dfu:0.6.2'
+    implementation 'org.greenrobot:eventbus:3.2.0'
+    implementation 'no.nordicsemi.android:ble:2.2.4'
 }
