@@ -46,8 +46,8 @@ android {
 
 dependencies {
     implementation files('libs/mokoBleLib.jar')
-    implementation(name: 'BXP-NORDIC_1.0.0_202109011754', ext: 'aar')
-    implementation(name: 'BXP-TLA_1.0.0_202109021127', ext: 'aar')
+    implementation(name: 'BXP-NORDIC_1.0.0_202109141134', ext: 'aar')
+    implementation(name: 'BXP-TLA_1.0.0_202109141144', ext: 'aar')
     // Butter Knife
     implementation 'com.jakewharton:butterknife:10.2.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
