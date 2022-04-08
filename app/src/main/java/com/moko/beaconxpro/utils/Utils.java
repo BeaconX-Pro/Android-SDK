@@ -20,31 +20,6 @@ import androidx.core.content.FileProvider;
 
 public class Utils {
 
-
-    public static File getFile(Context context, String fileName) {
-        String devicePath;
-        if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
-            // 优先保存到SD卡中
-            devicePath = Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator + "BeaconXPro" + File.separator + fileName;
-        } else {
-            // 如果SD卡不存在，就保存到本应用的目录下
-            devicePath = context.getFilesDir().getAbsolutePath() + File.separator + "BeaconXPro" + File.separator + fileName;
-        }
-        File deviceListFile = new File(devicePath);
-        if (!deviceListFile.exists()) {
-            try {
-                File parent = deviceListFile.getParentFile();
-                if (!parent.exists()) {
-                    parent.mkdirs();
-                }
-                deviceListFile.createNewFile();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        return deviceListFile;
-    }
-
     /**
      * @Date 2017/4/6
      * @Author wenzheng.liu
@@ -58,7 +33,9 @@ public class Utils {
         if (files.length == 1) {
             intent = new Intent(Intent.ACTION_SEND);
             Uri uri;
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                uri = IOUtils.insertDownloadFile(context, files[0]);
+            } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                 uri = FileProvider.getUriForFile(context, "com.moko.beaconxpro.fileprovider", files[0]);
                 intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
             } else {
@@ -67,12 +44,16 @@ public class Utils {
             intent.putExtra(Intent.EXTRA_STREAM, uri);
             intent.putExtra(Intent.EXTRA_TEXT, body);
         } else {
-            intent = new Intent(Intent.ACTION_SEND_MULTIPLE);
             ArrayList<Uri> uris = new ArrayList<>();
             for (int i = 0; i < files.length; i++) {
-                Uri uri = Uri.fromFile(files[i]);
-                uris.add(uri);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                    Uri fileUri = IOUtils.insertDownloadFile(context, files[i]);
+                    uris.add(fileUri);
+                } else {
+                    uris.add(Uri.fromFile(files[i]));
+                }
             }
+            intent = new Intent(Intent.ACTION_SEND_MULTIPLE);
             intent.putParcelableArrayListExtra(Intent.EXTRA_STREAM, uris);
             ArrayList<CharSequence> charSequences = new ArrayList<>();
             charSequences.add(body);
