@@ -8,8 +8,8 @@ android {
         applicationId "com.moko.beaconxpro"
         minSdkVersion 18
         targetSdkVersion 30
-        versionCode 21
-        versionName "2.0.2"
+        versionCode 22
+        versionName "2.0.3"
     }
 
     buildTypes {
@@ -46,7 +46,7 @@ android {
 
 dependencies {
     implementation files('libs/mokoBleLib.jar')
-    implementation(name: 'BXP-NORDIC_1.0.4_202204081125', ext: 'aar')
+    implementation(name: 'BXP-NORDIC_1.0.5_202212091714', ext: 'aar')
     implementation(name: 'BXP-TLA_1.0.6_202204081134', ext: 'aar')
     // Butter Knife
     implementation 'com.jakewharton:butterknife:10.2.1'
