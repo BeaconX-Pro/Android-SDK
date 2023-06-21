@@ -4,17 +4,15 @@
     <string name="cancel">Cancel</string>
     <string name="confirm">Confirm</string>
 
-    <string name="permission_storage_close_title">Storage permission is not available</string>
-    <string name="permission_storage_close_content">Please find it in cellphone setting- permission, and allow BeaconXPro use the Storage permission</string>
+    <string name="permission_storage_close_content">Please find it in cellphone setting- permission, and allow BeaconXPro use the Storage and location permission</string>
+    <string name="permission_ble_close_content">Please find it in cellphone setting- permission, and allow BeaconXPro use the bluetooth and location permission</string>
     <string name="permission_open">OK</string>
-    <string name="permission_storage_need_title">Please turn on Storage permissions</string>
-    <string name="permission_storage_need_content">BeaconXPro requires access to Location and Storage permission. If the permissions are not on, BeaconXPro cannot be used normally.</string>
+    <string name="permission_storage_need_content">BeaconXPro requires access to Storage and location permission. If the permissions are not on, BeaconXPro cannot be used normally.</string>
     <string name="location_need_title">Turn on Location permission</string>
-    <string name="location_need_content">After that, BeaconXPro could search and connect with the BeaconXPro</string>
-    <string name="permission_location_close_title">Location persission is not available</string>
-    <string name="permission_location_close_content">Please find it in cellphone setting- permission, and allow BeaconXPro use the Location and Storage permission</string>
-    <string name="permission_location_need_title">Turn on Location permission</string>
-    <string name="permission_location_need_content">After that, BeaconXPro could search and connect with the BeaconXPro</string>
+    <string name="location_need_content">After that, BeaconXPro could search and connect with the device</string>
+    <string name="permission_location_close_content">Please find it in cellphone setting- permission, and allow BeaconXPro use the Location permission</string>
+    <string name="permission_location_need_content">BeaconXPro requires access to Location permission. If the permissions are not on, BeaconXPro cannot be used normally.</string>
+    <string name="permission_ble_content">BeaconXPro requires access to bluetooth scan contract and location permission. If the permissions are not on, BeaconXPro cannot be used normally.</string>
 
     <string name="main_exit_tips">Are you sure you want to quit?</string>
 

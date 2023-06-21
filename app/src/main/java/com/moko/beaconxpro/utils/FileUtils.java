@@ -12,7 +12,7 @@ import android.provider.MediaStore;
 import android.provider.OpenableColumns;
 import android.text.TextUtils;
 
-import com.moko.bxp.nordic.activity.NordicMainActivity;
+import com.moko.beaconxpro.BaseApplication;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -35,7 +35,7 @@ public class FileUtils {
 
         // DocumentProvider
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT
-                && Build.VERSION.SDK_INT < Build.VERSION_CODES.R
+                && Build.VERSION.SDK_INT < Build.VERSION_CODES.Q
                 && DocumentsContract.isDocumentUri(context, uri)) {
             // LocalStorageProvider
             if (isLocalStorageDocument(uri)) {
@@ -117,7 +117,7 @@ public class FileUtils {
                 return getDataColumn(context, contentUri, selection, selectionArgs);
             }
         }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             return uriToFileApiQ(context, uri);
         }
         // MediaStore (and general)
@@ -224,7 +224,7 @@ public class FileUtils {
      * @param uri
      * @return
      */
-    @RequiresApi(api = Build.VERSION_CODES.R)
+    @RequiresApi(api = Build.VERSION_CODES.Q)
     private static String uriToFileApiQ(Context context, Uri uri) {
         File file = null;
         //android10以上转换
@@ -238,7 +238,7 @@ public class FileUtils {
                 String displayName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME));
                 try {
                     InputStream is = contentResolver.openInputStream(uri);
-                    File tempFile = new File(NordicMainActivity.PATH_LOGCAT + File.separator + displayName);
+                    File tempFile = new File(BaseApplication.PATH_LOGCAT + File.separator + displayName);
                     FileOutputStream fos = new FileOutputStream(tempFile);
                     copyStream(is, fos);
                     file = tempFile;
