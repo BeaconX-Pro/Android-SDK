@@ -10,6 +10,8 @@ android {
         targetSdkVersion 31
         versionCode 24
         versionName "2.0.4"
+        def formatDate = new Date().format("yyyyMMddHHmm")
+        setProperty("archivesBaseName", "BeaconXPro_${versionName}_${formatDate}")
     }
 
     buildTypes {
@@ -21,28 +23,6 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
-    }
-
-    applicationVariants.all { variant ->
-        variant.outputs.all { output ->
-            def outputFile = output.outputFile
-            if (outputFile != null && outputFile.name.endsWith('.apk')) {
-                def formatedDate = new Date().format("yyyyMMddHHmm")
-                def apkFileName = "BeaconXPro_${defaultConfig.versionName}_${formatedDate}.apk"
-                if (outputFile.name.contains('debug')) {
-                    apkFileName = "BeaconXPro_${defaultConfig.versionName}_${formatedDate}_debug.apk"
-                }
-                outputFileName = apkFileName
-            }
-            if (outputFile != null && outputFile.name.endsWith('.aab')) {
-                def formatedDate = new Date().format("yyyyMMddHHmm")
-                def apkFileName = "BeaconXPro_${defaultConfig.versionName}_${formatedDate}.aab"
-                if (outputFile.name.contains('debug')) {
-                    apkFileName = "BeaconXPro_${defaultConfig.versionName}_${formatedDate}_debug.aab"
-                }
-                outputFileName = apkFileName
-            }
-        }
     }
 
     repositories {
@@ -68,7 +48,7 @@ dependencies {
     implementation 'cn.carbswang.android:NumberPickerView:1.1.1'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'com.guolindev.permissionx:permissionx:1.7.1'
-    // conmmon
+    // common
     implementation 'no.nordicsemi.android.support.v18:scanner:1.6.0'
     implementation 'com.elvishew:xlog:1.6.1'
     implementation 'no.nordicsemi.android:dfu:0.6.2'
